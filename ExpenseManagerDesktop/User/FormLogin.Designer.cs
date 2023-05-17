@@ -33,9 +33,10 @@
             this.textBoxNameUser = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linkLabelForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.linkLabelRegister = new System.Windows.Forms.LinkLabel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnEnter = new System.Windows.Forms.Button();
-            this.linkLabelRegister = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +80,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.linkLabelForgotPassword);
             this.groupBox1.Controls.Add(this.linkLabelRegister);
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.btnEnter);
@@ -93,9 +95,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
             // 
+            // linkLabelForgotPassword
+            // 
+            this.linkLabelForgotPassword.AutoSize = true;
+            this.linkLabelForgotPassword.Location = new System.Drawing.Point(174, 159);
+            this.linkLabelForgotPassword.Name = "linkLabelForgotPassword";
+            this.linkLabelForgotPassword.Size = new System.Drawing.Size(105, 15);
+            this.linkLabelForgotPassword.TabIndex = 8;
+            this.linkLabelForgotPassword.TabStop = true;
+            this.linkLabelForgotPassword.Text = "Esqueceu a senha?";
+            this.linkLabelForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelForgotPassword_LinkClicked);
+            // 
+            // linkLabelRegister
+            // 
+            this.linkLabelRegister.AutoSize = true;
+            this.linkLabelRegister.Location = new System.Drawing.Point(118, 135);
+            this.linkLabelRegister.Name = "linkLabelRegister";
+            this.linkLabelRegister.Size = new System.Drawing.Size(161, 15);
+            this.linkLabelRegister.TabIndex = 7;
+            this.linkLabelRegister.TabStop = true;
+            this.linkLabelRegister.Text = "Não tem usuário? Registre-se";
+            this.linkLabelRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRegister_LinkClicked);
+            // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(123, 133);
+            this.btnCancel.Location = new System.Drawing.Point(123, 95);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 6;
@@ -105,24 +129,13 @@
             // 
             // btnEnter
             // 
-            this.btnEnter.Location = new System.Drawing.Point(204, 133);
+            this.btnEnter.Location = new System.Drawing.Point(204, 95);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(75, 23);
             this.btnEnter.TabIndex = 5;
             this.btnEnter.Text = "Entrar";
             this.btnEnter.UseVisualStyleBackColor = true;
             this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
-            // 
-            // linkLabelRegister
-            // 
-            this.linkLabelRegister.AutoSize = true;
-            this.linkLabelRegister.Location = new System.Drawing.Point(118, 102);
-            this.linkLabelRegister.Name = "linkLabelRegister";
-            this.linkLabelRegister.Size = new System.Drawing.Size(161, 15);
-            this.linkLabelRegister.TabIndex = 7;
-            this.linkLabelRegister.TabStop = true;
-            this.linkLabelRegister.Text = "Não tem usuário? Registre-se";
-            this.linkLabelRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRegister_LinkClicked);
             // 
             // FormLogin
             // 
@@ -131,6 +144,7 @@
             this.ClientSize = new System.Drawing.Size(326, 214);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -148,5 +162,6 @@
         private Button btnCancel;
         private Button btnEnter;
         private LinkLabel linkLabelRegister;
+        private LinkLabel linkLabelForgotPassword;
     }
 }

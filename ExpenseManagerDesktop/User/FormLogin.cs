@@ -1,4 +1,5 @@
 ﻿using ExpenseManagerDesktop.Domain.Helpers;
+using ExpenseManagerDesktop.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,12 @@ namespace ExpenseManagerDesktop
         {
             FormManager manager = new FormManager();
             manager.OpenNewForm(new FormRegisterUser());
+        }
+
+        private void linkLabelForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormManager manager = new FormManager();
+            manager.OpenNewForm(new FormForgotPassword());
         }
     }
 }

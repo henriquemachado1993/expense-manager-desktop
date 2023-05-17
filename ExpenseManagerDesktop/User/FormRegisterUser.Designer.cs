@@ -35,6 +35,9 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxUserName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxKeyword = new System.Windows.Forms.TextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +70,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRegister);
+            this.groupBox1.Controls.Add(this.textBoxKeyword);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBoxPassword);
             this.groupBox1.Controls.Add(this.textBoxName);
             this.groupBox1.Controls.Add(this.textBoxUserName);
@@ -75,11 +81,10 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(380, 195);
+            this.groupBox1.Size = new System.Drawing.Size(380, 257);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar-se";
-          
             // 
             // textBoxPassword
             // 
@@ -103,11 +108,37 @@
             this.textBoxUserName.Size = new System.Drawing.Size(238, 23);
             this.textBoxUserName.TabIndex = 3;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 143);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(360, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Palavra chave para resetar senha (Nunca esqueça da palavra chave)";
+            // 
+            // textBoxKeyword
+            // 
+            this.textBoxKeyword.Location = new System.Drawing.Point(13, 171);
+            this.textBoxKeyword.Name = "textBoxKeyword";
+            this.textBoxKeyword.Size = new System.Drawing.Size(346, 23);
+            this.textBoxKeyword.TabIndex = 7;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(284, 214);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.TabIndex = 8;
+            this.btnRegister.Text = "Registrar";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click_1);
+            // 
             // FormRegisterUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 225);
+            this.ClientSize = new System.Drawing.Size(408, 281);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormRegisterUser";
             this.Text = "FormRegisterUser";
@@ -126,5 +157,8 @@
         private TextBox textBoxPassword;
         private TextBox textBoxName;
         private TextBox textBoxUserName;
+        private Button btnRegister;
+        private TextBox textBoxKeyword;
+        private Label label4;
     }
 }

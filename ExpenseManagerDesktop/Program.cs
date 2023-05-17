@@ -1,4 +1,9 @@
 using ExpenseManagerDesktop.Domain.Helpers;
+using ExpenseManagerDesktop.Extensions;
+using ExpenseManagerDesktop.Infra;
+using ExpenseManagerDesktop.Infra.Contexts;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ExpenseManagerDesktop
 {
@@ -20,6 +25,9 @@ namespace ExpenseManagerDesktop
             {
                 Application.Run(new FormMain());
             }
+
+            // Configurar e construir o provedor de serviços
+            DependecyInjectorContainer.ConfigureServices();
         }
     }
 }
