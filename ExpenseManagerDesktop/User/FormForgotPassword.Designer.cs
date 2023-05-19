@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormForgotPassword));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnConfirmNewPassword = new System.Windows.Forms.Button();
             this.textBoxConfirmNewPassword = new System.Windows.Forms.TextBox();
@@ -120,7 +121,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(385, 215);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormForgotPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormForgotPassword";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

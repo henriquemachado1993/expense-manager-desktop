@@ -14,9 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Category\" />
     <Folder Include="BankAccount\" />
-    <Folder Include="Extensions\" />
   </ItemGroup>
 
   <ItemGroup>

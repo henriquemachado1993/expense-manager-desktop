@@ -23,6 +23,7 @@
 
             CurrentForm = currentForm;
             CurrentForm.FormClosed += (sender, e) => CloseApplication();
+            
             CurrentForm.Show();
         }
 
@@ -31,7 +32,13 @@
             if (Application.OpenForms.Count == 0)
             {
                 ExitThread();
+                ForceDispose();
             }
+        }
+
+        private void ForceDispose()
+        {
+            GC.Collect();
         }
     }
 }

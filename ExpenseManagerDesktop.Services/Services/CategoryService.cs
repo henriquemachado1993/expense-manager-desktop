@@ -74,7 +74,7 @@ namespace ExpenseManagerDesktop.Services.Services
 
             if (countExpense > 0)
             {
-                result.WithErrors("Não é possível deletar categorias que estão vinculados em despesas.");
+                result.WithErrors("Não é possível deletar categorias que estão vinculadas em despesas.");
                 return result;
             }
 

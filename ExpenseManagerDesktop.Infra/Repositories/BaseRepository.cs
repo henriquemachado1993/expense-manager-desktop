@@ -68,18 +68,21 @@ namespace ExpenseManagerDesktop.Infra.Repositories
         {
             if (entity != null)
             {
-                context.Set<T>().Attach(entity);
-                context.Entry(entity).State = EntityState.Modified;
+                var existingEntity = context.Set<T>().Find(entity.Id);
+                if (existingEntity != null)
+                {
+                    context.Entry(existingEntity).CurrentValues.SetValues(entity); // Copia as propriedades da entidade atualizada
+                }
             }
             return entity;
         }
 
         public void Delete(int id)
         {
-            var _entity = GetById(id);
-            if (_entity != null)
+            var existingEntity = context.Set<T>().Find(id);
+            if (existingEntity != null)
             {
-                context.Set<T>().Remove(_entity);
+                context.Set<T>().Remove(existingEntity);
             }
         }
 
@@ -87,7 +90,11 @@ namespace ExpenseManagerDesktop.Infra.Repositories
         {
             if (entity != null)
             {
-                context.Set<T>().Remove(entity);
+                var existingEntity = context.Set<T>().Find(entity.Id);
+                if (existingEntity != null)
+                {
+                    context.Set<T>().Remove(existingEntity); // Copia as propriedades da entidade atualizada
+                }
             }
         }
 

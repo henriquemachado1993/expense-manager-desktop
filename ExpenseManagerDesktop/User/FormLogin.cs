@@ -41,7 +41,7 @@ namespace ExpenseManagerDesktop
                 SessionUser.SetUserLogged(userData.Id, userData.LoginName);
 
                 FormManager manager = new FormManager(this);
-                manager.OpenNewForm(new FormMain());
+                manager.OpenNewForm(new FormDashBoard());
             }
         }
 

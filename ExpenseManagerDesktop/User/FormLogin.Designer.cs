@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxNameUser = new System.Windows.Forms.TextBox();
@@ -69,6 +70,7 @@
             this.textBoxNameUser.Name = "textBoxNameUser";
             this.textBoxNameUser.Size = new System.Drawing.Size(217, 23);
             this.textBoxNameUser.TabIndex = 2;
+            this.textBoxNameUser.Text = "hmgod";
             // 
             // textBoxPassword
             // 
@@ -76,6 +78,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(217, 23);
             this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.Text = "optimus1993";
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // groupBox1
@@ -143,6 +146,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 214);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
