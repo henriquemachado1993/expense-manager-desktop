@@ -1,7 +1,5 @@
 using ExpenseManagerDesktop.Domain.Helpers;
-using ExpenseManagerDesktop.Extensions;
 using ExpenseManagerDesktop.Infra;
-using ExpenseManagerDesktop.Infra.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +13,11 @@ namespace ExpenseManagerDesktop
         [STAThread]
         static void Main()
         {
+            var connectionString = "Server=localhost;port=3306;Database=dbExpenseManagementDesktop;User=root;Password=optimus1993;";
+
+            // Configura as injeções de dependencias
+            DependecyInjectorContainer.ConfigureServices(connectionString);
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
@@ -25,9 +28,6 @@ namespace ExpenseManagerDesktop
             {
                 Application.Run(new FormMain());
             }
-
-            // Configurar e construir o provedor de serviços
-            DependecyInjectorContainer.ConfigureServices();
         }
     }
 }

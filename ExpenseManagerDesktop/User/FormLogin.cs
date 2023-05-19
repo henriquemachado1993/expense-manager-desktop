@@ -1,4 +1,6 @@
 ﻿using ExpenseManagerDesktop.Domain.Helpers;
+using ExpenseManagerDesktop.Domain.Interfaces.Services;
+using ExpenseManagerDesktop.Infra;
 using ExpenseManagerDesktop.User;
 using System;
 using System.Collections.Generic;
@@ -26,16 +28,20 @@ namespace ExpenseManagerDesktop
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            if (this.textBoxNameUser.Text == "hmgod" && this.textBoxPassword.Text == "123")
-            {
-                SessionUser.SetUserLogged(Guid.NewGuid().ToString(), this.textBoxNameUser.Text);
+            var userService = DependecyInjectorContainer.GetService<IUserService>();
+            var result = userService.ValidateLogin(this.textBoxNameUser.Text, this.textBoxPassword.Text);
 
-                FormManager manager = new FormManager(this);
-                manager.OpenNewForm(new FormMain());
+            if (!result.IsValid)
+            {
+                MessageBox.Show(string.Join(" | ", result.Messages.Select(x => x.Message)), "Desculpe", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Usuário ou senha incorretos!", "Desculpe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var userData = result.Data;
+                SessionUser.SetUserLogged(userData.Id, userData.LoginName);
+
+                FormManager manager = new FormManager(this);
+                manager.OpenNewForm(new FormMain());
             }
         }
 

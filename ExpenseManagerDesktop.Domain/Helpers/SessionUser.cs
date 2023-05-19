@@ -8,11 +8,11 @@ namespace ExpenseManagerDesktop.Domain.Helpers
 {
     public static class SessionUser
     {
-        public static string? UserId { get; private set; }
+        public static int UserId { get; private set; }
         public static string? UserName { get; private set; }
         public static bool IsLogged { get; private set; }
 
-        public static void SetUserLogged(string userId, string userName, bool isLogged = true)
+        public static void SetUserLogged(int userId, string userName, bool isLogged = true)
         {
             UserId = userId;
             UserName = userName;
@@ -21,7 +21,7 @@ namespace ExpenseManagerDesktop.Domain.Helpers
 
         public static void Logout()
         {
-            UserId = "";
+            UserId = 0;
             UserName = "";
             IsLogged = false;
         }

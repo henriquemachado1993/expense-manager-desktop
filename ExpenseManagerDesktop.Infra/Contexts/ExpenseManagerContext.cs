@@ -13,11 +13,26 @@ namespace ExpenseManagerDesktop.Infra.Contexts
     {
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<BankAccounts> BankAccounts { get; set; }
         public DbSet<User> Users { get; set; }
+
+        public ExpenseManagerContext()
+        {
+        }
+
+        public ExpenseManagerContext(DbContextOptions<ExpenseManagerContext> options)
+        : base(options)
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Method intentionally left empty.
+            if (!optionsBuilder.IsConfigured)
+            {
+                var serverVersion = new MySqlServerVersion(new Version(5, 7, 37));
+                optionsBuilder.UseMySql("Server=localhost;port=3306;Database=dbExpenseManagementDesktop;User=root;Password=optimus1993;", serverVersion); 
+                // TODO: buscar a string de conexao de um arquivo de configuração
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

@@ -1,5 +1,9 @@
-﻿using ExpenseManagerDesktop.Infra;
+﻿using ExpenseManagerDesktop.Domain.Interfaces.Data;
+using ExpenseManagerDesktop.Domain.Interfaces.Services;
+using ExpenseManagerDesktop.Infra;
 using ExpenseManagerDesktop.Infra.Contexts;
+using ExpenseManagerDesktop.Infra.Repositories;
+using ExpenseManagerDesktop.Services.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -12,23 +16,37 @@ namespace ExpenseManagerDesktop.Infra
 {
     public static class DependecyInjectorContainer
     {
-        public static ServiceProvider ServiceProvider { get; private set; }
+        private static ServiceProvider ServiceProvider { get; set; }
 
-        public static void ConfigureServices()
+        public static void ConfigureServices(string connectionString)
         {
             var services = new ServiceCollection();
 
-            // Configurar a conexão com o banco de dados
-            var connectionString = "Server=localhost;port=3306;Database=dbExpenseManagementDesktop;User=root;Password=optimus1993;";
+            // Database
             var serverVersion = new MySqlServerVersion(new Version(5, 7, 37));
             services.AddDbContext<ExpenseManagerContext>(options =>
-                options.UseMySql(connectionString, serverVersion, b => b.MigrationsAssembly("ExpenseManagerDesktop.Infra")));
+                //options.UseMySql(connectionString, serverVersion, b => b.MigrationsAssembly("ExpenseManagerDesktop.Infra")));
+                options.UseMySql(connectionString, serverVersion));
 
-            DependenciesInjector.Register(services);
+            // Services
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IBankAccountsService, BankAccountsService>();
+            services.AddScoped<IExpenseService, ExpenseService>();
+            services.AddScoped<IUserService, UserService>();
+
+            // Repositories
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
             ServiceProvider = services.BuildServiceProvider();
         }
 
-        //var service = DependecyInjectorContainer.ServiceProvider.GetRequiredService<Interfacedesejada>();
+        public static T GetService<T>()
+        {
+            if (ServiceProvider == null)
+                throw new InvalidOperationException("You failed to configure the service provider.");
+                
+            return ServiceProvider.GetRequiredService<T>();
+        }
     }
 }

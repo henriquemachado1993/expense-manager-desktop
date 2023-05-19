@@ -17,7 +17,7 @@ namespace ExpenseManagerDesktop.Domain.Entities
         public decimal AccountValue { get; set; }
 
         // Relationships
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; }
     }
 }

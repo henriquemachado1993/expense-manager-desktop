@@ -6,6 +6,7 @@ namespace ExpenseManagerDesktop.Domain.Entities
 {
     public class User : BaseEntity
     {
+        public string LoginName { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
         public string Keyword { get; set; }
