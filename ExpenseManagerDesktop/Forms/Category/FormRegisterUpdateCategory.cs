@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace ExpenseManagerDesktop.Category
 {
-    public partial class FormRegisterOrUpdate : Form
+    public partial class FormRegisterUpdateCategory : Form
     {
         /// <summary>
         /// Armazena as alterações feitas no registro, para um uso em outro form
         /// </summary>
         public Domain.Entities.Category ChangedData { get; private set; }
 
-        public FormRegisterOrUpdate(int idCategory = 0)
+        public FormRegisterUpdateCategory(int idCategory = 0)
         {
             InitializeComponent();
             LoadCategory(idCategory);

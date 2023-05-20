@@ -18,13 +18,30 @@
 
         public void OpenNewForm(Form currentForm)
         {
-            if(CurrentForm != null)
+            if (CurrentForm != null)
                 CurrentForm.Hide();
 
             CurrentForm = currentForm;
             CurrentForm.FormClosed += (sender, e) => CloseApplication();
-            
+
             CurrentForm.Show();
+        }
+
+        public void CloseCurrentForm(Form currentForm)
+        {
+            if (currentForm != null)
+            {
+                currentForm.FormClosed -= (sender, e) => CloseApplication();
+                currentForm.Close();
+                currentForm.Dispose();
+                currentForm = null;
+                CloseApplication();
+            }
+        }
+
+        public void CloseCurrentForm()
+        {
+            CloseCurrentForm(CurrentForm);
         }
 
         private void CloseApplication()

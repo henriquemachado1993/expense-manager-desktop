@@ -12,5 +12,8 @@ namespace ExpenseManagerDesktop.Domain.Interfaces.Services
         BusinessResult<List<Expense>> GetFiltered(QueryCriteria<Expense>? query = null);
         BusinessResult<Expense> GetById(int id);
         BusinessResult<bool> Delete(int id);
+
+        BusinessResult<Tuple<int, decimal>> GetTotalAmountOfExpenses();
+
     }
 }

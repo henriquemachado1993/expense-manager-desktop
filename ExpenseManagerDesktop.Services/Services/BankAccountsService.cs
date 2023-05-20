@@ -100,5 +100,11 @@ namespace ExpenseManagerDesktop.Services.Services
             boResult.Data = _uow.GetRepository<BankAccounts>().GetFiltered(query).ToList();
             return boResult;
         }
+
+        public BusinessResult<decimal> GetTotalAmountBankAccounts()
+        {
+            var bankAccounts = _uow.GetRepository<BankAccounts>().GetFiltered(new QueryCriteria<BankAccounts>()).ToList();
+            return BusinessResult<decimal>.CreateValidResult(bankAccounts.Any() ? bankAccounts.Select(x => x.AccountValue).Sum() : 0);
+        }
     }
 }

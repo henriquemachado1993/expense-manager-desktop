@@ -162,5 +162,17 @@ namespace ExpenseManagerDesktop.Services.Services
 
             return BusinessResult<Expense>.CreateValidResult(expense);
         }
+
+        public BusinessResult<Tuple<int, decimal>> GetTotalAmountOfExpenses()
+        {
+            var expenses = _uow.GetRepository<Expense>().GetFiltered(new QueryCriteria<Expense>() {
+                Expression = x => x.IsPaid == 0 
+            }).ToList();
+
+            int qtd = expenses.Any() ? expenses.Select(x => x.Id).Sum() : 0;
+            decimal totalAmount = expenses.Any() ? expenses.Select(x => x.Amount).Sum() : 0;
+
+            return BusinessResult<Tuple<int, decimal>>.CreateValidResult(Tuple.Create(qtd, totalAmount));
+        }
     }
 }

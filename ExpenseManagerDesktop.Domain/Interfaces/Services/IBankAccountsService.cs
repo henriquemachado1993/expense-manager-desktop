@@ -10,5 +10,6 @@ namespace ExpenseManagerDesktop.Domain.Interfaces.Services
         BusinessResult<List<BankAccounts>> GetFiltered(QueryCriteria<BankAccounts>? query = null);
         BusinessResult<BankAccounts> GetById(int id);
         BusinessResult<bool> Delete(int id);
+        BusinessResult<decimal> GetTotalAmountBankAccounts();
     }
 }

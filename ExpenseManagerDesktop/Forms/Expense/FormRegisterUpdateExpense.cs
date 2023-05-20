@@ -1,4 +1,5 @@
-﻿using ExpenseManagerDesktop.Domain.Helpers;
+﻿using ExpenseManagerDesktop.Contexts;
+using ExpenseManagerDesktop.Domain.Helpers;
 using ExpenseManagerDesktop.Domain.Interfaces.Services;
 using ExpenseManagerDesktop.Domain.ValueObjects;
 using ExpenseManagerDesktop.Infra;
@@ -144,6 +145,8 @@ namespace ExpenseManagerDesktop.Expense
                     MessageBox.Show(string.Join(" | ", resultUpdate.Messages.Select(x => x.Message)), "Desculpe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            ExpenseDataContext.RefreshExpenseData();
         }
 
         private List<string> ValidateForm()

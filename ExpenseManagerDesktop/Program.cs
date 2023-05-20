@@ -26,7 +26,7 @@ namespace ExpenseManagerDesktop
 
             if (SessionUser.IsLogged)
             {
-                Application.Run(new FormMain());
+                Application.Run(new FormDashBoard());
             }
         }
     }
