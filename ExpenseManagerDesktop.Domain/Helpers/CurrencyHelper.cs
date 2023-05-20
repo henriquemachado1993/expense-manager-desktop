@@ -46,5 +46,6 @@ namespace ExpenseManagerDesktop.Domain.Helpers
                     return string.Empty;
             }
         }
+
     }
 }

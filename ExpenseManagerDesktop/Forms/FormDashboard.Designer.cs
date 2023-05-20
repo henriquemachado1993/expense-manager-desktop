@@ -47,10 +47,10 @@
             this.dataGridViewExpenses = new System.Windows.Forms.DataGridView();
             this.tabPageCategories = new System.Windows.Forms.TabPage();
             this.btnNewCategory = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCategories = new System.Windows.Forms.DataGridView();
             this.tabPageBankAccounts = new System.Windows.Forms.TabPage();
             this.btnNewBankAccount = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewBankAccounts = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,9 +58,9 @@
             this.tabPageExpenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpenses)).BeginInit();
             this.tabPageCategories.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategories)).BeginInit();
             this.tabPageBankAccounts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBankAccounts)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -231,7 +231,7 @@
             // tabPageCategories
             // 
             this.tabPageCategories.Controls.Add(this.btnNewCategory);
-            this.tabPageCategories.Controls.Add(this.dataGridView1);
+            this.tabPageCategories.Controls.Add(this.dataGridViewCategories);
             this.tabPageCategories.Location = new System.Drawing.Point(4, 24);
             this.tabPageCategories.Name = "tabPageCategories";
             this.tabPageCategories.Padding = new System.Windows.Forms.Padding(3);
@@ -249,19 +249,19 @@
             this.btnNewCategory.Text = "Nova categoria";
             this.btnNewCategory.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewCategories
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1121, 452);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCategories.Location = new System.Drawing.Point(6, 35);
+            this.dataGridViewCategories.Name = "dataGridViewCategories";
+            this.dataGridViewCategories.RowTemplate.Height = 25;
+            this.dataGridViewCategories.Size = new System.Drawing.Size(1121, 452);
+            this.dataGridViewCategories.TabIndex = 0;
             // 
             // tabPageBankAccounts
             // 
             this.tabPageBankAccounts.Controls.Add(this.btnNewBankAccount);
-            this.tabPageBankAccounts.Controls.Add(this.dataGridView2);
+            this.tabPageBankAccounts.Controls.Add(this.dataGridViewBankAccounts);
             this.tabPageBankAccounts.Location = new System.Drawing.Point(4, 24);
             this.tabPageBankAccounts.Name = "tabPageBankAccounts";
             this.tabPageBankAccounts.Padding = new System.Windows.Forms.Padding(3);
@@ -279,14 +279,14 @@
             this.btnNewBankAccount.Text = "Nova conta";
             this.btnNewBankAccount.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dataGridViewBankAccounts
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 35);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(1126, 452);
-            this.dataGridView2.TabIndex = 0;
+            this.dataGridViewBankAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBankAccounts.Location = new System.Drawing.Point(6, 35);
+            this.dataGridViewBankAccounts.Name = "dataGridViewBankAccounts";
+            this.dataGridViewBankAccounts.RowTemplate.Height = 25;
+            this.dataGridViewBankAccounts.Size = new System.Drawing.Size(1126, 452);
+            this.dataGridViewBankAccounts.TabIndex = 0;
             // 
             // FormDashBoard
             // 
@@ -310,9 +310,9 @@
             this.tabPageExpenses.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpenses)).EndInit();
             this.tabPageCategories.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategories)).EndInit();
             this.tabPageBankAccounts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBankAccounts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,5 +341,7 @@
         private DataGridView dataGridView1;
         private Button btnNewBankAccount;
         private DataGridView dataGridView2;
+        private DataGridView dataGridViewCategories;
+        private DataGridView dataGridViewBankAccounts;
     }
 }

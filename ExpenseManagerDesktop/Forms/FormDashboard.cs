@@ -68,7 +68,8 @@ namespace ExpenseManagerDesktop
             this.labelTotalBalance.Text = CurrencyHelper.FormatCurrency(ExpenseDataContext.TotalBalanceAccount);
 
             // Informaçoes do saldo descontando despesas
-            this.labelBalanceMinusExpenses.BackColor = ExpenseDataContext.BalanceMinusExpenses < 0 ? Color.Red : Color.Green;
+            this.labelBalanceMinusExpenses.ForeColor = ExpenseDataContext.BalanceMinusExpenses < 0 ? Color.Red : Color.Green;
+            //this.labelBalanceMinusExpenses.BackColor = ExpenseDataContext.BalanceMinusExpenses < 0 ? Color.Red : Color.Green;
             this.labelBalanceMinusExpenses.Text = $"{ CurrencyHelper.FormatCurrency(ExpenseDataContext.BalanceMinusExpenses) }";
         }
 
