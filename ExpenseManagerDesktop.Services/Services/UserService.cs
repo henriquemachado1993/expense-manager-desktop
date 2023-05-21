@@ -44,6 +44,19 @@ namespace ExpenseManagerDesktop.Services.Services
             return result;
         }
 
+        public BusinessResult<List<User>> GetFiltered(QueryCriteria<User>? query = null)
+        {
+            if (query == null)
+                query = new QueryCriteria<User>() { };
+
+            if (!query.IgnoreNavigation && (query.Navigation == null || !query.Navigation.Any()))
+                query.Navigation = new List<string>() { "BankAccounts", "Expenses" };
+
+            var boResult = BusinessResult<List<User>>.CreateValidResult();
+            boResult.Data = _uow.GetRepository<User>().GetFiltered(query).ToList();
+            return boResult;
+        }
+
         public BusinessResult<User> Update(User user)
         {
             var result = BusinessResult<User>.CreateValidResult();

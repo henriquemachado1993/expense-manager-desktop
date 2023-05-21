@@ -14,5 +14,6 @@ namespace ExpenseManagerDesktop.Domain.Interfaces.Services
         BusinessResult<User> Update(User user);
         BusinessResult<User> UpdatePassword(User user);
         BusinessResult<User> ValidateLogin(string userName, string password);
+        BusinessResult<List<User>> GetFiltered(QueryCriteria<User>? query = null);
     }
 }

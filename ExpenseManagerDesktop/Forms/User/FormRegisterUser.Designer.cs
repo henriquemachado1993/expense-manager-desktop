@@ -47,27 +47,27 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(25, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 15);
+            this.label1.Size = new System.Drawing.Size(91, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nome de login";
+            this.label1.Text = "*Nome de login";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(55, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 15);
+            this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Seu nome";
+            this.label2.Text = "*Seu nome";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(72, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 15);
+            this.label3.Size = new System.Drawing.Size(44, 15);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Senha";
+            this.label3.Text = "*Senha";
             // 
             // groupBox1
             // 
@@ -109,9 +109,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 143);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(360, 15);
+            this.label4.Size = new System.Drawing.Size(365, 15);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Palavra chave para resetar senha (Nunca esqueça da palavra chave)";
+            this.label4.Text = "*Palavra chave para resetar senha (Nunca esqueça da palavra chave)";
             // 
             // textBoxPassword
             // 
@@ -144,7 +144,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegisterUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormRegisterUser";
+            this.Text = "Registra-se";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

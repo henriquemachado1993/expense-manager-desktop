@@ -42,16 +42,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 38);
+            this.label1.Location = new System.Drawing.Point(7, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.Size = new System.Drawing.Size(42, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Título";
+            this.label1.Text = "*Título";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 71);
+            this.label2.Location = new System.Drawing.Point(6, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 15);
             this.label2.TabIndex = 1;
@@ -59,21 +59,21 @@
             // 
             // textBoxTitle
             // 
-            this.textBoxTitle.Location = new System.Drawing.Point(71, 35);
+            this.textBoxTitle.Location = new System.Drawing.Point(7, 37);
             this.textBoxTitle.Name = "textBoxTitle";
             this.textBoxTitle.Size = new System.Drawing.Size(247, 23);
             this.textBoxTitle.TabIndex = 2;
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(71, 68);
+            this.textBoxDescription.Location = new System.Drawing.Point(6, 81);
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(247, 23);
             this.textBoxDescription.TabIndex = 3;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(243, 97);
+            this.btnSave.Location = new System.Drawing.Point(178, 110);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 4;
@@ -91,14 +91,14 @@
             this.groupBox1.Controls.Add(this.textBoxTitle);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(329, 134);
+            this.groupBox1.Size = new System.Drawing.Size(260, 154);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Categoria";
             // 
             // textBoxCategoryId
             // 
-            this.textBoxCategoryId.Location = new System.Drawing.Point(71, 98);
+            this.textBoxCategoryId.Location = new System.Drawing.Point(6, 110);
             this.textBoxCategoryId.Name = "textBoxCategoryId";
             this.textBoxCategoryId.Size = new System.Drawing.Size(70, 23);
             this.textBoxCategoryId.TabIndex = 5;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 157);
+            this.ClientSize = new System.Drawing.Size(285, 175);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegisterUpdateCategory";

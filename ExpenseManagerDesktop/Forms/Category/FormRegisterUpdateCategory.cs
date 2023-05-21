@@ -50,6 +50,13 @@ namespace ExpenseManagerDesktop.Category
         {
             var serviceCategory = DependecyInjectorContainer.GetService<ICategoryService>();
 
+            var listValidations = ValidateForm();
+            if (listValidations.Any())
+            {
+                MessageBox.Show(string.Join(" | ", listValidations.Select(x => x)), "Desculpe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (string.IsNullOrEmpty(this.textBoxCategoryId.Text))
             {
                 var resultAdd = serviceCategory.Add(new Domain.Entities.Category()
@@ -89,6 +96,15 @@ namespace ExpenseManagerDesktop.Category
                     MessageBox.Show(string.Join(" | ", resultUpdate.Messages.Select(x => x.Message)), "Desculpe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private List<string> ValidateForm()
+        {
+            var listErrors = new List<string>();
+            if (string.IsNullOrWhiteSpace(this.textBoxTitle.Text))
+                listErrors.Add("Campo 'Título' é obrigatório!");
+
+            return listErrors;
         }
     }
 }
