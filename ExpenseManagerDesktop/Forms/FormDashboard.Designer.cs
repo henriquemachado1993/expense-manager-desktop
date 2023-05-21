@@ -51,6 +51,7 @@
             this.tabPageBankAccounts = new System.Windows.Forms.TabPage();
             this.btnNewBankAccount = new System.Windows.Forms.Button();
             this.dataGridViewBankAccounts = new System.Windows.Forms.DataGridView();
+            this.btnRefreshDataGridView = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -288,11 +289,22 @@
             this.dataGridViewBankAccounts.Size = new System.Drawing.Size(1126, 452);
             this.dataGridViewBankAccounts.TabIndex = 0;
             // 
+            // btnRefreshDataGridView
+            // 
+            this.btnRefreshDataGridView.Location = new System.Drawing.Point(1079, 159);
+            this.btnRefreshDataGridView.Name = "btnRefreshDataGridView";
+            this.btnRefreshDataGridView.Size = new System.Drawing.Size(75, 23);
+            this.btnRefreshDataGridView.TabIndex = 8;
+            this.btnRefreshDataGridView.Text = "Atualizar";
+            this.btnRefreshDataGridView.UseVisualStyleBackColor = true;
+            this.btnRefreshDataGridView.Click += new System.EventHandler(this.btnRefreshDataGridView_Click);
+            // 
             // FormDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 705);
+            this.Controls.Add(this.btnRefreshDataGridView);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -343,5 +355,6 @@
         private DataGridView dataGridView2;
         private DataGridView dataGridViewCategories;
         private DataGridView dataGridViewBankAccounts;
+        private Button btnRefreshDataGridView;
     }
 }

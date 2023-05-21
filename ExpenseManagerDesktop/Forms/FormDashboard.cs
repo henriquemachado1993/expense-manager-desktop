@@ -81,5 +81,10 @@ namespace ExpenseManagerDesktop
             tabControlManager = new TabControlManager(this.tabControlMain);
             tabControlManager.LoadData(this.tabControlMain.TabPages["tabPageExpenses"]); // inicia o tab de despesas ao carregar a páginas
         }
+
+        private void btnRefreshDataGridView_Click(object sender, EventArgs e)
+        {
+            tabControlManager.RefreshDataGridViewControl(this.tabControlMain.SelectedTab);
+        }
     }
 }

@@ -96,14 +96,26 @@ namespace ExpenseManagerDesktop
             }
         }
 
+        public void RefreshDataGridViewControl(TabPage selectedPage)
+        {
+            if (selectedPage != null)
+            {
+                DataGridView dataGridView = DataGridViews[selectedPage];
+                dataGridView.Rows.Clear();
+                dataGridView.Columns.Clear();
+
+                LoadData(selectedPage);
+            }
+        }
+
         public void LoadData(TabPage tabPage)
         {
+            // Lógica para carregar os dados no DataGridView correspondente à guia
+            DataGridView dataGridView = DataGridViews[tabPage];
+
             // Se a aba já tiver sido carregada em algum outro momento, coloco ela como já carregada
             if (!DataLoaded[tabPage])
                 DataLoaded[tabPage] = true;
-
-            // Lógica para carregar os dados no DataGridView correspondente à guia
-            DataGridView dataGridView = DataGridViews[tabPage];
 
             if (tabPage.Name == "tabPageExpenses")
             {
