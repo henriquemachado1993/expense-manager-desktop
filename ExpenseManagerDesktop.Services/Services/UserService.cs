@@ -1,4 +1,5 @@
 ﻿using ExpenseManagerDesktop.Domain.Entities;
+using ExpenseManagerDesktop.Domain.Helpers;
 using ExpenseManagerDesktop.Domain.Interfaces.Data;
 using ExpenseManagerDesktop.Domain.Interfaces.Services;
 using ExpenseManagerDesktop.Domain.ValueObjects;
@@ -35,7 +36,7 @@ namespace ExpenseManagerDesktop.Services.Services
             }
 
             user.LoginName = user.LoginName.ToLower();
-            user.Password = user.Password; // TODO: colocar uma criptografia
+            user.Password = PasswordEncryptionHelper.EncryptPassword(user.Password);
             user.CreatedAt = DateTime.Now;
             user.Status = 1;
             result.Data = _uow.GetRepository<User>().Add(user);
@@ -96,7 +97,7 @@ namespace ExpenseManagerDesktop.Services.Services
                 return result;
             }
 
-            entity.Password = user.Password; // TODO: colocar uma criptografia
+            entity.Password = PasswordEncryptionHelper.EncryptPassword(user.Password);
             entity.LastModifiedAt = DateTime.Now;
 
             result.Data = _uow.GetRepository<User>().Update(entity);
@@ -108,10 +109,10 @@ namespace ExpenseManagerDesktop.Services.Services
         public BusinessResult<User> ValidateLogin(string userName, string password)
         {
             var result = BusinessResult<User>.CreateValidResult();
-            // TODO: incluir o decript
+       
             var entity = _uow.GetRepository<User>().GetFiltered(new QueryCriteria<User>()
             {
-                Expression = x => x.LoginName.ToLower() == userName.ToLower() && x.Password == password
+                Expression = x => x.LoginName.ToLower() == userName.ToLower() && x.Password == PasswordEncryptionHelper.EncryptPassword(password)
             }).FirstOrDefault();
 
             if (entity == null)
