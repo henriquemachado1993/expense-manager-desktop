@@ -18,10 +18,8 @@ namespace ExpenseManagerDesktop.Infra
     {
         private static ServiceProvider ServiceProvider { get; set; }
 
-        public static void ConfigureServices(string connectionString)
+        public static void ConfigureServices(IServiceCollection services, string connectionString)
         {
-            var services = new ServiceCollection();
-
             // Database
             var serverVersion = new MySqlServerVersion(new Version(5, 7, 37));
             services.AddDbContext<ExpenseManagerContext>(options =>

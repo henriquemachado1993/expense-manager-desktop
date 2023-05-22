@@ -150,8 +150,7 @@ namespace ExpenseManagerDesktop
             dataGridView.CellContentClick += dataGridView_CellContentClick;
 
             dataGridView.AllowUserToAddRows = false;
-
-            //ConfigurarColunasDataGridView(dataGridView);
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         #region Busca as informações para preenchimento do DataGrid
@@ -409,15 +408,6 @@ namespace ExpenseManagerDesktop
                     }
                 }
             };
-        }
-
-        private void ConfigurarColunasDataGridView(DataGridView dataGridView)
-        {
-            // Configurar as colunas do DataGridView para ajuste automático
-            foreach (DataGridViewColumn column in dataGridView.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            }
         }
     }
 

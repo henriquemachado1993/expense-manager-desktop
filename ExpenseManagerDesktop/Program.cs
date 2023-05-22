@@ -13,10 +13,10 @@ namespace ExpenseManagerDesktop
         [STAThread]
         static void Main()
         {
-            var connectionString = "Server=localhost;port=3306;Database=dbExpenseManagementDesktop;User=root;Password=optimus1993;";
-
             // Configura as injeções de dependencias
-            DependecyInjectorContainer.ConfigureServices(connectionString);
+            var connectionString = "Server=localhost;port=3306;Database=dbExpenseManagementDesktop;User=root;Password=optimus1993;";
+            var services = new ServiceCollection();
+            DependecyInjectorContainer.ConfigureServices(services, connectionString);
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
